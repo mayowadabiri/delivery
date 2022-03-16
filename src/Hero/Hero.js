@@ -1,5 +1,6 @@
 import MyOwnName from "../Images/hero-strike.svg"
 import Header from "../Header/Header"
+import Link from '../Link/Link';
 const Hero = () => {
     return (
         <section id="Home" className="section-1">
@@ -23,7 +24,7 @@ const Hero = () => {
                     </div>
                     <div className="hero-btn">
                         <button className="register animate__animated animate__jackInTheBox animate__slower	4s">
-                            <a href="/SignUp.html">Register Your Company Now</a>
+                            <Link link="/SignUp.html">Register Your Company Now</Link>
                         </button>
                     </div>
                 </div>

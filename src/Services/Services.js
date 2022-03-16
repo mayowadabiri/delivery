@@ -6,10 +6,10 @@ import SmallLogo2 from "../Images/small-logo-2.svg";
 import SmallLogo3 from "../Images/small-logo-3.svg";
 import SmallLogo4 from "../Images/small-logo-4.svg";
 
-const Service = () => {
+const Services = () => {
   return (
-    <section id="services" class="section-2">
-      <div class="services">
+    <section id="services" className="section-2">
+      <div className="services">
         <Title title="Services" />
         <p>
           Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit. Nunc
@@ -17,18 +17,18 @@ const Service = () => {
           netus mauris, phasellus.
         </p>
       </div>
-      <div class="iphone-grid">
-        <div class="iphone-1">
-          <div class="iphone">
+      <div className="iphone-grid">
+        <div className="iphone-1">
+          <div className="iphone">
             <img src={iPhone} alt="iphone" />
           </div>
         </div>
-        <div class="wrapper">
-          <div class="wrap-flex">
+        <div className="wrapper">
+          <div className="wrap-flex">
             <ServiceItem image={SmallLogo1} title="Street Delivery" />
             <ServiceItem image={SmallLogo2} title={"City Delivery"} />
           </div>
-          <div class="wrap-flex-1">
+          <div className="wrap-flex-1">
             <ServiceItem image={SmallLogo3} title="Tracking Aplication" />
             <ServiceItem image={SmallLogo4} title="Packaging" />
           </div>
@@ -37,4 +37,4 @@ const Service = () => {
     </section>
   );
 };
-export default Service;
+export default Services;

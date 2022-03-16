@@ -1,33 +1,42 @@
 import Popular from "../Images/popular.svg";
 
 import { useState } from "react";
+import Link from "../Link/Link"
+import Card from "../Card/Card"
+
+import { pricing } from "../constants/index"
+const plans = {
+    basic: {
+        monthly: 49,
+        yearly: 499
+    },
+    pro: {
+        monthly: 99,
+        yearly: 999
+    },
+    business: {
+        monthly: 199,
+        yearly: 1299
+    }
+}
+
+console.log(plans['pro'])
 
 
-const monthly = {
-    basic: 49,
-    pro: 99,
-    business: 199,
-}
-const yearly = {
-    basic: 499,
-    pro: 999,
-    business: 1999,
-}
+
 const Price = () => {
-
-    const [price, setPrice] = useState('monthly');
-    const [plan, setPlan] = useState(monthly);
+    const [time, setTime] = useState('monthly');
+    const [plan, setPlan] = useState(pricing);
 
 
     const handlePrice = (priceType) => {
-        //    "yearly"
-        setPrice(priceType)
-        if (plan === "monthly") {
-            setPlan(monthly)
-        } else {
-            setPlan(yearly)
-        }
-
+        setTime(priceType)
+        setPlan(plan.map(item => {
+            return {
+                ...item,
+                price: priceType === "monthly" ? plans['pro'].monthly : plans[item.plan].yearly
+            }
+        }))
     }
     console.log(plan)
     return (
@@ -39,121 +48,22 @@ const Price = () => {
             </div>
             <div className="main-price">
                 <div className="plan-switch-container">
-                    <span className={`monthly ${price === "monthly" && "active"}`} onClick={() => handlePrice("monthly")}>Monthly</span>
-                    <span className={`yearly ${price === "yearly" && "active"}`} onClick={() => handlePrice("yearly")}>Yearly</span>
+                    <span className={`monthly ${time === "monthly" && "active"}`} onClick={() => handlePrice("monthly")}>Monthly</span>
+                    <span className={`yearly ${time === "yearly" && "active"}`} onClick={() => handlePrice("yearly")}>Yearly</span>
                 </div>
             </div>
             <div className="pricing-table">
-                <div className="table">
-                    <div className="content">
-                        <h3>Basic</h3>
-
-                        <div className="price1">
-                            <span className="amount basic-price">${plan.basic}</span>
-                            <span className="month1 plan-duration">/ {price}</span>
-                        </div>
-
-                        <ul className="features">
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                        </ul>
-
-                        <div className="get-btn">
-                            <a href="#">Get Started</a>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-                <div className="table-1">
-
-                    <div className="content">
-                        <div className="pro">
-                            <h4>Pro</h4>
-                            <img src={Popular} alt="popular" />
-                        </div>
-                        <div className="price1">
-                            <span className="amount pro-price">${plan.pro}</span>
-                            <span className="month1 plan-duration">/ {price}</span>
-                        </div>
-
-                        <ul className="features">
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                        </ul>
-
-                        <div className="get-btn">
-                            <a href="#">Get Started</a>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-
-                <div className="table-2">
-                    <div className="content">
-                        <h3>Business</h3>
-
-                        <div className="price1">
-                            <span className="amount business-price">${plan.business}</span>
-                            <span className="month1 plan-duration">/ {price}</span>
-                        </div>
-
-                        <ul className="features">
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                            <li>
-                                <span>Local Delivery</span><br />
-                                <p>Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit. Malesuada </p>
-                            </li>
-                        </ul>
-                        <div className="get-btn">
-                            <a href="#">Get Started</a>
-                        </div>
-                    </div>
-                </div>
+                {plan.map((item => (
+                    <Card
+                        key={item.id}
+                        plan={item.plan}
+                        price={item.price}
+                        feat={item.features}
+                        img={item.img}
+                        cssStyle={item.class}
+                        time={time}
+                    />
+                )))}
             </div>
         </section >
     )
