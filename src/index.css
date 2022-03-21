@@ -49,7 +49,7 @@ body {
 }
 
 header {
-  width: 85%;
+  width: 100%;
   height: 10vh;
   margin: auto;
   display: flex;
@@ -59,10 +59,16 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 1;
+  background-color: black;
 }
 
 nav {
   width: 38%;
+}
+
+.main {
+  margin-top: 100px;
 }
 
 nav .navlinks {
@@ -792,8 +798,10 @@ li p {
   border-radius: 5px;
   border: 1px solid #D2D6DC;
   color: #4B5563;
+  height: auto;
 }
 
+/* .height */
 .toggle_1,
 .content_1 {
   font-family: "archivo", sans-serif;
@@ -822,6 +830,10 @@ li p {
   height: 0;
   overflow: hidden;
   transition: all 1s;
+}
+
+.show {
+  height: auto !important;
 }
 
 .fa-plus {

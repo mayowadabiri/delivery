@@ -1,5 +1,5 @@
-import Link from '../Link/Link';
-import Popular from "../Images/popular.svg";
+import Link from "../Link/Link";
+import Popular from "../../Images/popular.svg";
 
 const Card = (props) => {
     return (
@@ -14,19 +14,20 @@ const Card = (props) => {
                     <span className="month1 plan-duration">/{props.time}</span>
                 </div>
                 <ul className="features">
-                    {props.feat.map(item => (
+                    {props.feat.map((item) => (
                         <li key={item.id}>
-                            <span>{item.title}</span><br />
+                            <span>{item.title}</span>
+                            <br />
                             <p>{item.text}</p>
                         </li>
                     ))}
                 </ul>
                 <div className="get-btn">
-                    <Link link="/business.html">Get Started</Link>                        </div>
+                    <Link link="/business.html">Get Started</Link>{" "}
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-
-export default Card
+export default Card;

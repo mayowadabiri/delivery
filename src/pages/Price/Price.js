@@ -1,10 +1,10 @@
-import Popular from "../Images/popular.svg";
+import Popular from "../../Images/popular.svg";
 
 import { useState } from "react";
-import Link from "../Link/Link"
-import Card from "../Card/Card"
+import Link from "../../components/Link/Link"
+import Card from "../../components/Card/Card"
 
-import { pricing } from "../constants/index"
+import { pricing } from "../../constants/index"
 const plans = {
     basic: {
         monthly: 49,
@@ -20,25 +20,48 @@ const plans = {
     }
 }
 
-console.log(plans['pro'])
+
+// return {
+
+//     id: 1,
+//     plan: "Something ese ",
+//     class: "table",
+//     price: "49",
+//     features: [
+//         {
+//             id: "1",
+//             title: "Local delivery",
+//             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada"
+//         },
+//         {
+//             id: "2",
+//             title: "Local delivery",
+//             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada"
+//         },
+//         {
+//             id: "3",
+//             title: "Local delivery",
+//             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada"
+//         },
+//     ]
+// }
 
 
+console.log(plans['business'])
 
 const Price = () => {
     const [time, setTime] = useState('monthly');
     const [plan, setPlan] = useState(pricing);
-
 
     const handlePrice = (priceType) => {
         setTime(priceType)
         setPlan(plan.map(item => {
             return {
                 ...item,
-                price: priceType === "monthly" ? plans['pro'].monthly : plans[item.plan].yearly
+                price: priceType === "monthly" ? plans[item.plan].monthly : plans[item.plan].yearly
             }
         }))
     }
-    console.log(plan)
     return (
         <section id="Pricing" className="section-4">
             <div className="price-text">
@@ -64,6 +87,7 @@ const Price = () => {
                         time={time}
                     />
                 )))}
+
             </div>
         </section >
     )

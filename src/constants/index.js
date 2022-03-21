@@ -7,7 +7,6 @@ export const pricing = [
     {
         id: 1,
         plan: "basic",
-
         class: "table",
         price: "49",
         features: [
@@ -93,8 +92,38 @@ export const pricing = [
 
 ]
 
-// export const anitgerconsta = "sjygewku" // named export 
 
 
-// export const soiwnr = "bvwer ew"
 
+export const faq = [
+    {
+        id: 1,
+        question: "What is the difference between a local delivery and a pickup?",
+        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada",
+        open: false
+    },
+    {
+        id: 2,
+        question: "What is the difference between a local delivery and a pickup?",
+        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada",
+        open: false
+    },
+    {
+        id: 3,
+        question: "What is the difference between a local delivery and a pickup?",
+        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada",
+        open: false
+    },
+    {
+        id: 4,
+        question: "What is the difference between a local delivery and a pickup?",
+        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada",
+        open: false
+    },
+    {
+        id: 5,
+        question: "What is the difference between a local delivery and a pickup?",
+        answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Malesuada",
+        open: false
+    }
+]

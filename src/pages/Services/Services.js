@@ -1,10 +1,10 @@
-import ServiceItem from "../ServiceItem/ServiceItem";
-import Title from "../Title/Title";
-import iPhone from "../Images/iphone-image.svg";
-import SmallLogo1 from "../Images/small-logo-1.svg";
-import SmallLogo2 from "../Images/small-logo-2.svg";
-import SmallLogo3 from "../Images/small-logo-3.svg";
-import SmallLogo4 from "../Images/small-logo-4.svg";
+import ServiceItem from "../../components/ServiceItem/ServiceItem";
+import Title from "../../components/Title/Title";
+import iPhone from "../../Images/iphone-image.svg";
+import SmallLogo1 from "../../Images/small-logo-1.svg";
+import SmallLogo2 from "../../Images/small-logo-2.svg";
+import SmallLogo3 from "../../Images/small-logo-3.svg";
+import SmallLogo4 from "../../Images/small-logo-4.svg";
 
 const Services = () => {
   return (

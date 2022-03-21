@@ -1,8 +1,8 @@
-import Calendar from "../Images/calender.svg"
-import Packaging from "../Images/packaging.svg"
-import Locations from "../Images/locate.svg"
-import Airplane from "../Images/airplane.svg"
-import Female from "../Images/asian-young-female-delivery-worker-standing-white-wall-using-mobile-smartphone-talking-with-customer-checking-shipping-address.png"
+import Calendar from "../../Images/calender.svg"
+import Packaging from "../../Images/packaging.svg"
+import Locations from "../../Images/locate.svg"
+import Airplane from "../../Images/airplane.svg"
+import Female from "../../Images/asian-young-female-delivery-worker-standing-white-wall-using-mobile-smartphone-talking-with-customer-checking-shipping-address.png"
 const Working = () => {
     return (
         <section className="section-3">

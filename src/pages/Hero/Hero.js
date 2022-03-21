@@ -1,6 +1,6 @@
-import MyOwnName from "../Images/hero-strike.svg"
-import Header from "../Header/Header"
-import Link from '../Link/Link';
+import MyOwnName from "../../Images/hero-strike.svg"
+import Header from "../../components/Header/Header"
+import Link from '../../components/Link/Link';
 const Hero = () => {
     return (
         <section id="Home" className="section-1">
@@ -39,7 +39,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <Header />
+
         </section>
     )
 }

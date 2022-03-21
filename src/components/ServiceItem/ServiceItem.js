@@ -1,4 +1,4 @@
-import SmallLogo1 from "../Images/small-logo-1.svg";
+import SmallLogo1 from "../../Images/small-logo-1.svg";
 
 const ServiceItem = (props) => {
     return (
